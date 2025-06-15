@@ -1,0 +1,78 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #131515;
+  position: relative;
+  gap: 10px;
+  z-index: 1;
+}
+
+.header {
+  position: sticky;
+  background-color: #131515;
+  z-index: 999;
+  padding: 8px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+.header-container.shrink {
+  width: calc(100% - 210px); /* Shrink when hamburger is open */
+}
+
+.scroll-wrapper {
+  width: 1230px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  flex: 1;
+  margin-left: 20px;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.category-button {
+  background-color: #131515;
+  color: #aaa;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  color: white;
+  background-color: #131515;
+}
+
+.scroll-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 2;
+}
+
+.scroll-btn.left {
+  position: absolute;
+  left: 0;
+  background: linear-gradient(to right, #0f0f0f 70%, transparent);
+}
+
+.scroll-btn.right {
+  position: absolute;
+  right: 0;
+  background: linear-gradient(to left, #0f0f0f 70%, transparent);
+}

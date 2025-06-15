@@ -1,0 +1,193 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #131515;
+  padding: 8px 16px;
+  color: white;
+  flex-wrap: wrap;
+  position: relative;
+  height: 100px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.icon-button:hover {
+  background-color: #292928;
+}
+
+.youtube-icon {
+  font-size: 22px;
+  color: red;
+}
+
+.logo {
+  position: relative;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.youtube {
+  color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.sa {
+  position: absolute;
+  top: -8px;
+  right: -19px;
+  font-size: 10px;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #292928;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-wrapper input {
+  padding: 6px 10px;
+  background: none;
+  border: none;
+  color: white;
+  outline: none;
+  width: 500px;
+}
+
+.search-button {
+  background-color: #292928;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.bg-button {
+  background-color: #292928;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bg-button:hover {
+  background-color: #444;
+}
+
+.create-button {
+  display: flex;
+  align-items: center;
+  background-color: #292928;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  gap: 6px;
+  transition: background 0.3s;
+}
+
+.create-button:hover {
+  background-color: #444;
+}
+
+.profile {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+}
+
+/* Search toggle button on mobile */
+.mobile-only-search {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  position: absolute;
+  right: 180px;
+  top: 10px;
+  z-index: 10;
+ 
+
+}
+.remove-icon{
+  margin-right: -160px;
+  top: 3px;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .mobile-only-search {
+    display: inline-flex;
+  }
+
+  .search-wrapper input {
+    display: none;
+    width: 0;
+  }
+
+  .navbar.search-mode {
+    justify-content: flex-start;
+  }
+
+  .navbar.search-mode .navbar-left,
+  .navbar.search-mode .navbar-right {
+    display: none;
+  }
+  
+ 
+
+  .navbar.search-mode .navbar-center {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .navbar.search-mode .search-wrapper input {
+    display: inline-block;
+    width: 320px;
+  }
+  .hamburger-icon{
+    display: none;
+  }
+  .create-button {
+    display: none;
+  }
+  .search-icon-fa{
+    display: none;
+  }
+}
