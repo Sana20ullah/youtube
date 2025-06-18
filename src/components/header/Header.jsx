@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react'; // Use any icon lib you want
-import './header.css'; // Styling is separated for clarity
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import './header.css';
 
 const categories = [
-  "All", "Node.js", "Web Development", "Martial Arts movies", "Gaming", "Airplane", "Live",
+  "All", "Node.js", "Web Development", "Martial", "Arts", "Movies", "Gaming", "Airplane", "Live",
   "Action thrillers", "Shelters", "Podcasts", "AI", "Sci-fi films", "RC aircraft", "Mixes",
   "Video editing software", "Architects", "History", "Recently uploads", "Watched"
 ];
@@ -19,9 +19,7 @@ const Header = ({ menuOpen }) => {
   };
 
   return (
-    <div
-      className={`header-container ${menuOpen ? 'shrink' : ''}`}
-    >
+    <div className={`header-container ${menuOpen ? 'shrink' : ''}`}>
       <button className="scroll-btn left" onClick={() => scroll('left')}>
         <ChevronLeft size={24} />
       </button>
