@@ -20,13 +20,32 @@ import {
 } from "react-icons/fa";
 import "./Hamburger.css";
 
-export default function Hamburger({ isOpen }) {
+export default function Hamburger({ isOpen, onHomeClick }) {
   if (!isOpen) return null;
 
   return (
     <div className="hamburger-menu">
       <ul>
-        <li><FaHome /> <span>Home</span></li>
+        <li>
+  <button 
+    onClick={onHomeClick} 
+    style={{
+      background: "none", 
+      border: "none", 
+      padding: 0, 
+      margin: 0, 
+      cursor: "pointer", 
+      display: "flex", 
+      alignItems: "center", 
+      color: "inherit",
+      font: "inherit"
+    }}
+    title="Home"
+  >
+    <FaHome /> <span style={{ marginLeft: 8 }}>Home</span>
+  </button>
+</li>
+
         <li><FaBolt /> <span>Shorts</span></li>
         <li><FaYoutube /> <span>Subscriptions</span></li>
         <hr />

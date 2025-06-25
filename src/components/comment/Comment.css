@@ -135,3 +135,34 @@
   color: white;
   border-radius: 20px;
 }
+/* Default desktop - no height restriction */
+
+/* Mobile: restrict comments container height, hide overflow */
+@media (max-width: 768px) {
+  .comments-section {
+    max-height: 270px; /* approx height of input + 1 comment */
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* When expanded, show full height */
+  .comments-section.expanded {
+    max-height: none;
+    overflow: visible;
+  }
+    /* Existing rules... */
+
+ 
+
+  .show-more-comments {
+    display: block;
+    background: none;
+    border: none;
+    color: #3ea6ff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+}

@@ -6,16 +6,11 @@
   padding: 8px 16px;
   color: white;
   flex-wrap: wrap;
-  position: relative;
-  height: 100px;
-}
-
-.navbar {
   position: sticky;
   top: 0px;
   z-index: 1000;
+  height: 100px;
 }
-
 
 .navbar-left,
 .navbar-center,
@@ -142,18 +137,41 @@
   right: 180px;
   top: 10px;
   z-index: 10;
- 
-
 }
-.remove-icon{
-  margin-right: -160px;
+
+.remove-icon {
   top: 3px;
+}
+
+.navbar.search-mode .mobile-only-search.remove-icon {
+  position: absolute;
+  right: 122px;
+  top: 10px;
+  display: none !important;
+  z-index: 11;
+}
+
+.navbar.search-mode .mobile-only-search.search-icon {
+  position: absolute;
+  right: 70px;
+  top: 10px;
+  display: none !important;
+  z-index: 11;
+}
+
+.mobile-only-search.mic-icon {
+  position: absolute;
+  right: 10px;
+  top: 1px;
+  z-index: 11;
 }
 
 /* Responsive layout */
 @media screen and (max-width: 768px) {
   .mobile-only-search {
     display: inline-flex;
+    margin-top: -2px;
+    margin-right: -63px;
   }
 
   .search-wrapper input {
@@ -163,14 +181,13 @@
 
   .navbar.search-mode {
     justify-content: flex-start;
+    
   }
 
   .navbar.search-mode .navbar-left,
   .navbar.search-mode .navbar-right {
     display: none;
   }
-  
- 
 
   .navbar.search-mode .navbar-center {
     flex: 1;
@@ -179,15 +196,66 @@
 
   .navbar.search-mode .search-wrapper input {
     display: inline-block;
-    width: 320px;
+    width: 370px;
+    padding: 10px;
   }
-  .hamburger-icon{
+
+  .hamburger-icon {
     display: none;
   }
+
   .create-button {
     display: none;
   }
-  .search-icon-fa{
+
+  .search-icon-fa {
     display: none;
   }
+
+  /* Grid layout for center section on mobile during search mode */
+  .navbar.search-mode .navbar-center {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto; /* input | ❌ | 🔍 | 🎤 */
+    align-items: center;
+    gap: 8px;
+  }
+
+  .navbar.search-mode .search-wrapper {
+    grid-column: 1 / 2;
+    width: 75%;
+  }
+
+  .navbar.search-mode .mobile-only-search.remove-icon {
+    grid-column: 2 / 3;
+  }
+
+  .navbar.search-mode .mobile-only-search.search-icon {
+    grid-column: 3 / 4;
+  }
+
+  .navbar.search-mode .mobile-only-search.mic-icon {
+    grid-column: 4 / 5;
+    margin-right: -1px;
+  }
+  .navbar.search-mode .mobile-only-search.remove-icon {
+  position: absolute;
+  right: 122px;
+  top: 10px;
+  display: inline-flex !important;
+  z-index: 11;
+  margin-right: -1px;
+}
+
+.navbar.search-mode .mobile-only-search.search-icon {
+  position: absolute;
+  right: 70px;
+  top: 10px;
+  display: inline-flex !important;
+  z-index: 11;
+  margin-right: -2px;
+}
+.profile {
+  display: none;
+}
+
 }
